@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-x_176@7^b_783blw@&d&o(v%c_8dt7kq3b10nj8jixuh^5-m@x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ncer.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -160,7 +160,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-SITE_ID = 2
+SITE_ID = 1
 
 LOGIN_REDIRECT_URL = "/profile"
 
