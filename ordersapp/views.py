@@ -60,7 +60,7 @@ def lectures(requests,div,year):
 
 
 
-
+@login_required(login_url='/accounts/login/')
 def assignments(request):
 
      all_assignments = class_assignments.objects.all()

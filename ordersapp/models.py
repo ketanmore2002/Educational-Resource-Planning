@@ -25,7 +25,7 @@ class class_assignments(models.Model):
    topic = models.CharField(max_length=20000)
    professor = models.CharField(max_length=20000)
    subject = models.CharField(max_length=2000)
-   Date = models.CharField(max_length=2000)
+   date = models.CharField(max_length=2000)
    division = models.CharField(max_length=20000, choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')] )
    year = models.CharField(max_length=20000,choices=[('1', 'First'), ('2', 'Second'), ('3', 'Third'), ('4', 'Fourth')])
    link =  models.CharField(max_length=20000)
