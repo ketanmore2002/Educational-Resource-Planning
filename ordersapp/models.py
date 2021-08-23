@@ -11,12 +11,30 @@ class lecture_class(models.Model):
      subject = models.CharField(max_length=2000)
      professor = models.CharField(max_length=20000)
      time = models.TimeField()
-     division = models.CharField(max_length=20000, choices=[('a', 'A'), ('b', 'B'), ('c', 'C'), ('d', 'D')] )
+     division = models.CharField(max_length=20000, choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')] )
      year = models.CharField(max_length=2000,choices=[('1', 'First'), ('2', 'Second'), ('3', 'Third'), ('4', 'Fourth')])
      link =  models.CharField(max_length=20000)
 
      def __str__(self):
 
-        return self.professor + "-" +self.subject + "-" +self.year + "-" +(self.division).upper()  
+        return self.professor + " - " + self.subject + " - " + (self.division).upper() + " - " + self.year   
+
+
+
+class class_assignments(models.Model):
+   topic = models.CharField(max_length=20000)
+   professor = models.CharField(max_length=20000)
+   subject = models.CharField(max_length=2000)
+   Date = models.CharField(max_length=2000)
+   division = models.CharField(max_length=20000, choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')] )
+   year = models.CharField(max_length=20000,choices=[('1', 'First'), ('2', 'Second'), ('3', 'Third'), ('4', 'Fourth')])
+   link =  models.CharField(max_length=20000)
+   created = models.DateTimeField(auto_now_add=True)
+
+   def __str__(self):
+      return self.topic + " - "  +  self.professor + " - " + self.subject + " - " + (self.division).upper() + " - " + self.year   
+
+       
+        
 
 

@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 
-from .models import lecture_class 
+from .models import lecture_class , class_assignments
 from django.contrib import messages
 
 
@@ -28,7 +28,13 @@ def profile(request):
 
 
 def classes(request):
-     return render(request,'classes.html',)
+     all_chats= lecture_class.objects.all()
+     return render(request,'classes.html',{'all_chats':all_chats})
+
+
+
+def chat(request):
+     return render(request,'chat.html',)
 
 
 
@@ -52,7 +58,50 @@ def lectures(requests,div,year):
 
 
 
+
+
+
+def assignments(request):
+
+     all_assignments = class_assignments.objects.all()
  
+     return render(request,'assignments.html',{'all_assignments':all_assignments})
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def CreateProduct(requests):
      form1 = ProductForm(requests.POST or None)
      if form1.is_valid():

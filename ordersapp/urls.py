@@ -11,6 +11,8 @@ urlpatterns = [
     path("lectures/<str:div>/<int:year>",views.lectures,name='lectures'),
     path("classes/",views.classes,name='classes'),
     path("teachers/",views.teachers,name='teachers'),
+    path("chat/",views.chat,name='chat'),
+    path("assignments/",views.assignments,name='assignments'),
     
       
     
