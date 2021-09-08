@@ -14,7 +14,7 @@ class lecture_class(models.Model):
      division = models.CharField(max_length=20000, choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')] )
      year = models.CharField(max_length=2000,choices=[('1', 'First'), ('2', 'Second'), ('3', 'Third'), ('4', 'Fourth')])
      link =  models.CharField(max_length=20000)
-     date = models.DateField(auto_now_add=True, null=True)
+     date = models.DateField(auto_now_add=True, blank=True)
      status =  models.CharField(max_length=20000, null = True)
 
      def __str__(self):
