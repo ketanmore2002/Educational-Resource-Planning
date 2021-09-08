@@ -148,6 +148,10 @@ TIME_INPUT_FORMATS = ('%I:%M %p',)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+
+
 STATIC_URL = '/static/'
 
 
@@ -156,7 +160,6 @@ STATICFILES_DIRS = [
     
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
