@@ -149,7 +149,7 @@ TIME_INPUT_FORMATS = ('%I:%M %p',)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
-STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles') #change this
 
 
 STATIC_URL = '/static/'
