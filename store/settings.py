@@ -169,7 +169,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-SITE_ID = 0 
+SITE_ID = 1 
 
 LOGIN_REDIRECT_URL = "/profile"
 
