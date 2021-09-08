@@ -12,8 +12,7 @@ from attendance.models import s_attendance
 from django.contrib import messages
 
 
-from .tables import tableUser
-from django_tables2 import SingleTableView
+
 
 
 
