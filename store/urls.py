@@ -20,6 +20,8 @@ from django.views.generic import TemplateView
 
 
 
+
+
 admin.site.site_header = "NCER Admin"
 admin.site.site_title = "NCER Admin Portal"
 admin.site.index_title = "Welcome to NCER Portal"
@@ -31,6 +33,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('ordersapp.urls')),
     path('accounts/', include('allauth.urls')),
+    path('',include('attendance.urls')),
+    path('',include('teachers_profile.urls')),
+    
+    
 ]
  
 

@@ -1,0 +1,9 @@
+import django_tables2 as tables
+from django.contrib.auth.models import User
+
+
+class tableUser(tables.Table):
+    class Meta:
+        model = User
+        template_name = "django_tables2/bootstrap.html"
+        fields = ("username","first_name","last_name","last_login","email" )

@@ -4,6 +4,7 @@ from django.urls.conf import include
 from ordersapp import views
 
 
+
 urlpatterns = [
     #path("",views.home,name='index'),
     path("forms/",views.CreateProduct,name='CreateProduct'),
@@ -14,6 +15,7 @@ urlpatterns = [
     path("chat/",views.chat,name='chat'),
     path("assignments/",views.assignments,name='assignments'),
     
+       
       
     
 ]
