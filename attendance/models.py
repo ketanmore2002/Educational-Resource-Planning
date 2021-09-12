@@ -23,5 +23,5 @@ class s_attendance(models.Model):
 
    def __str__(self):
 
-        return self.subject + " - " + self.division + " - " + str(self.date) 
+        return self.subject + " - " + self.division# + " - " + str(self.date) 
 

@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load socialaccount %}
 {% load static %}
+{% load widget_tweaks %}
+
+
 
 
 {% block content %}
@@ -15,7 +18,7 @@
      
      {% for lecture in all_lectures %}
 
-      {% if lecture.status == "publish" %}
+      {% if lecture.status == "publish" %} 
 
     <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
@@ -24,36 +27,34 @@
         
       </div>
       <div class="p-4 lg:w-1/3">
-      {% comment %} <a href="{{lecture.link}}" target="_blank"> {% endcomment %}
+      
         <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
         <img class="h-40 rounded w-full object-cover object-center mb-6" src="{% static '/download5.gif' %}" alt="content">
-          <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Press JOIN NOW to enter lecture h2>
+          <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Press SEE MORE to enter lecture {{lecture.id}} </h2>
           <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Subject : {{lecture.subject}}</h1>
           <p class="leading-relaxed mb-3">Time : {{lecture.time}}</p>
           <p class="leading-relaxed mb-3">Professor : {{lecture.professor}}</p>
-          <form method="POST" action="{{lecture.link}}"  id="form1" >
-           {% csrf_token %}
-         <input type="hidden" id="f_name" name="f_name" value="{{user.first_name}}">
+          {% comment %} <form action="/forms_lectures/{{lecture.lecture_id}}"  id="form1" enctype="multipart/form-data" name = "{{lecture.lecture_id}}"> {% endcomment %}
+            
+         {% comment %} <input type="hidden" id="f_name" name="f_name" value="{{user.first_name}}">
          <input type="hidden" id="attendance" name="attendance" value="present">
          <input type="hidden" id="l_name" name="l_name" value="{{user.last_name}}">
          <input type="hidden" id="division" name="division" value="{{lecture.division}}">
          <input type="hidden" id="year" name="year" value="{{lecture.year}}">
-         <input type="hidden" id="lecture_id" name="lecture_id" value="{{lecture.id}}">
+         <input type="hidden" id="lecture_id" name="lecture_id" value="{{lecture.lecture_id}}">
          <input type="hidden" id="subject" name="subject" value="{{lecture.subject}}">
-         </form><br>
-         <button class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded" type="submit" form="form1" value="JOIN NOW" >JOIN NOW</button>
-         {% comment %} <button type="submit"value="Submit"  id="form1" >Submit</button> {% endcomment %}
+         </form><br> {% endcomment %}
+          
+         
+         <a href = "/forms_lectures/{{lecture.lecture_id}}"
+         <button class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">SEE MORE</button>
+         </a>
         </div>
-        {% comment %} </a> {% endcomment %}
-        </div>
+        
+        </div> 
     </div>
   </div>
 </section>
-
-
-{% else %}
-<p></p>
-
 
 {% endif %}
     

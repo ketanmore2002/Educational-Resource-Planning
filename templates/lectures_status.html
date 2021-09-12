@@ -41,15 +41,14 @@
             <button class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded"  value="Submit" > JOIN </button>
             </a><br><br>
     
-            <form action="/attendanceListid/{{tab.id}}/" id = "" method = "POST">
-              {% csrf_token %}
+            <a href = "/attendanceListid/{{tab.lecture_id}}/"
             <button class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded"> check Attendance </button>
-            </form><br>
+            </a><br>
             
-            <form id = "form1" method = "POST">
+            <form action="/lectures_list_status/" method = "POST" id = "form1" >
             {% csrf_token %}
             <p class="text-gray-500">{{tab.date}} | {{tab.time}}</p>
-             <input type="radio" id="id" name="id" value="{{tab.id}}">
+             <input type="checkbox" id="id" name="id" value="{{tab.lecture_id}}">
              <label for="vehicle1">Unpublish this Lecture ?</label><br>
              </form>
              

@@ -22,7 +22,6 @@ def teachers_profile(request):
         year = request.POST.get('year', None)
         date = request.POST.get('attendance_date', None)
         return redirect('/attendanceList/'+division+'/'+year+'/'+date+'/'+subject+'/')
-        print("Namne",division,year,date)
     else:
         pass
        
@@ -36,8 +35,8 @@ def lectures_list(request):
 
     name = request.user.username
     table = lecture_class.objects.all().filter(professor = name)
-    ids = request.POST.get('id', None)
-    lecture_class.objects.all().filter(id = ids).delete()
+    lecture_id = request.POST.get('lecture_id', None)
+    lecture_class.objects.all().filter(lecture_id = lecture_id).delete()
     
 
     return render(request,'lectures_list.html',{'table':table})
@@ -100,12 +99,54 @@ def attendanceListid(request,id):
 
 
 
-def lectures_list_status(request):
+def lectures_list_status(requests):
 
-    name = request.user.username
+    name = requests.user.username
     table = lecture_class.objects.all().filter(professor = name)
-    ids = request.POST.get('id', None)
-    lecture_class.objects.all().filter(id = ids).update(status = "unpublish")
-    
+    if requests.method == "POST":
+     ids = requests.POST.get('id', None)
+     lecture_class.objects.all().filter(lecture_id = ids).update(status = "unpublished")
+     
+     
+    else:
+        return render(requests,'lectures_status.html',{'table':table})
 
-    return render(request,'lectures_status.html',{'table':table})
+    return render(requests,'lectures_status.html',{'table':table})
+
+
+
+
+
+
+
+
+
+
+def forms_lectures(requests,uuid):
+
+    all_lectures = lecture_class.objects.all().filter(lecture_id=uuid)
+
+    table = s_attendance.objects.all().filter(lecture_id = uuid)
+
+    total = table.count()
+
+    if requests.method == "POST":  
+     f_name = requests.POST.get('f_name', None)
+     l_name = requests.POST.get('l_name', None)
+     attendance = requests.POST.get('attendance', None)
+     division = requests.POST.get('division', None)
+     year = requests.POST.get('year', None)
+     subject = requests.POST.get('subject', None)
+     lecture_id = requests.POST.get('lecture_id', None)
+
+     if attendance != None and f_name != None and l_name != None and division != None and subject != None and year != None:
+          s_attendance.objects.create(attendance =attendance,f_name = f_name,l_name = l_name, division = division,subject = subject,year = year,lecture_id=lecture_id)
+          print("name :" ,attendance,f_name,l_name,division,year)
+     else:
+          pass 
+    
+    else:
+        return render(requests,'forms_lectures.html',{"all_lectures":all_lectures,"total":total})
+        
+     
+    return render(requests,'forms_lectures.html',{"all_lectures":all_lectures,"total":total})
