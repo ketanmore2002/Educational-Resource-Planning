@@ -30,7 +30,8 @@ def teachers_profile(request):
 
 
 
-
+@login_required(login_url='/accounts/login/')
+@staff_member_required(login_url='/')
 def lectures_list(request):
 
     name = request.user.username
@@ -60,7 +61,8 @@ def attendanceList(request,divi,ear,sub,date):
 
 
 
-
+@login_required(login_url='/accounts/login/')
+@staff_member_required(login_url='/')
 def create_lectures(request):
 
     if request.method == 'POST':
@@ -82,7 +84,8 @@ def create_lectures(request):
 
 
 
-
+@login_required(login_url='/accounts/login/')
+@staff_member_required(login_url='/')
 def attendanceListid(request,id):
 
     # print("Namne 2",divi,ear,sub)
@@ -98,7 +101,8 @@ def attendanceListid(request,id):
 
 
 
-
+@login_required(login_url='/accounts/login/')
+@staff_member_required(login_url='/')
 def lectures_list_status(requests):
 
     name = requests.user.username
@@ -121,7 +125,8 @@ def lectures_list_status(requests):
 
 
 
-
+@login_required(login_url='/accounts/login/')
+@staff_member_required(login_url='/')
 def forms_lectures(requests,uuid):
 
     all_lectures = lecture_class.objects.all().filter(lecture_id=uuid)

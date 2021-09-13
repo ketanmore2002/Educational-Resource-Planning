@@ -38,7 +38,7 @@
           <span class="ml-auto text-gray-900">{{lecture.time}}</span>
         </div>
         <div class="flex">
-          <span class="title-font font-medium text-2xl text-gray-900">Total number of students joined : {{total}}</span>
+          <span class="title-font font-medium text-2xl text-gray-900">Total Attendance : {{total}}</span>
           <form method = "POST" action="{{lecture.link}}"  id="form1" enctype="multipart/form-data" name = "{{lecture.lecture_id}}">
           {% csrf_token %}
          <input type="hidden" id="f_name" name="f_name" value="{{user.first_name}}">
@@ -53,7 +53,7 @@
          </button>
         </div>
       </div>
-      <img alt="" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{% static '/attendance3.gif' %}">
+      <img alt="" class="lg:w-1/2" width="800" height="506" src="{% static '/attendance3.gif' %}">
     </div>
   </div>
 </section>
