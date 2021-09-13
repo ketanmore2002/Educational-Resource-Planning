@@ -45,8 +45,8 @@
             <form action=""  method="POST" id="form1">
            {% csrf_token %} 
 
-          <label for="subject">subject:</label>
-          <input type="text" id="subject" name="subject" style="text-transform:uppercase" required ><br><br>
+          {% comment %} <label for="subject">subject:</label>
+          <input type="text" id="subject" name="subject" style="text-transform:uppercase" required ><br><br> {% endcomment %}
 
 
            <label for="division">division :</label>

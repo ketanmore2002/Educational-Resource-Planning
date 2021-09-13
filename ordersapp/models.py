@@ -18,6 +18,7 @@ class lecture_class(models.Model):
      link =  models.CharField(max_length=20000)
      date = models.DateField(auto_now_add=True, blank=True)
      status =  models.CharField(max_length=20000, null = True)
+     delete_status =  models.CharField(max_length=20000, null = True)
      lecture_id=models.UUIDField(primary_key = True,default = uuid.uuid4, editable = False)
 
      def __str__(self):

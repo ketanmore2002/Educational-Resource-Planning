@@ -13,15 +13,19 @@
   <body>
    
 
-
+<div class="alert alert-secondary" role="alert">
+{% if total == 0 %}
+ No Lectures were created or students are still joining. please refresh after sometime.
+{% else %}
+ Total Lectures attended : {{total}} outoff {{table_all}}
+ {% endif %}
+</div>
 
 <table class="table">
   <thead class="thead-light">
     <tr>
       {% comment %} <th scope="col"></th> {% endcomment %}
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Username</th>
+      <th scope="col">Subject</th>
       <th scope="col">Division</th>
       <th scope="col">Year</th>
       <th scope="col">Subject</th>
@@ -35,9 +39,7 @@
   {% for tab in table %}
     <tr>
       {% comment %} <th scope="row"></th> {% endcomment %}
-      <td>{{tab.f_name}}</td>
-      <td>{{tab.l_name}}</td>
-      <td>{{tab.username}}</td>
+      <td>{{tab.subject}}</td>
       <td>{{tab.division}}</td>
       <td>{{tab.year}}</td>
       <td>{{tab.subject}}</td>
@@ -50,21 +52,18 @@
   </tbody>
 </table>
 
-
-
-
 <div class="alert alert-secondary" role="alert">
 {% if total == 0 %}
  No Lectures were created or students are still joining. please refresh after sometime.
 {% else %}
- Total Attendance for Lecture :{{total}}
+ Total Lectures attended : {{total}} outoff {{table_all}}
  {% endif %}
 </div>
 
 
-<form action="/teachers_profile"   id="form1">
+<a href = "/profile"  >
 <button type="submit" class="btn btn-warning">Go Back</button>
-</form>
+<a>
 
 
 

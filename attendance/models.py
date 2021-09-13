@@ -13,6 +13,8 @@ class s_attendance(models.Model):
    subject = models.CharField(max_length=200,null=True)
    f_name = models.CharField(max_length=200,null=True)
    l_name = models.CharField(max_length=200,null=True)
+   username = models.CharField(max_length=200,null=True)
+   user_id = models.CharField(max_length=200,null=True)
    division = models.CharField(max_length=200,null=True)
    year = models.CharField(max_length=200,null=True)
    attendance = models.CharField(max_length=200,null=True)
@@ -23,5 +25,5 @@ class s_attendance(models.Model):
 
    def __str__(self):
 
-        return self.subject + " - " + self.division# + " - " + str(self.date) 
+        return self.f_name + " - " + self.l_name# + " - " + str(self.date) 
 

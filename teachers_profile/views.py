@@ -16,16 +16,31 @@ from django.contrib.auth.decorators import login_required
 @staff_member_required(login_url='/')
 def teachers_profile(request):
 
+    name = request.user.username
+
     if request.method == 'POST':
-        subject = request.POST.get('subject', None)
+        
         division = request.POST.get('division', None)
         year = request.POST.get('year', None)
         date = request.POST.get('attendance_date', None)
-        return redirect('/attendanceList/'+division+'/'+year+'/'+date+'/'+subject+'/')
+        return redirect('/attendanceList_manual/'+division+'/'+year+'/'+date+'/'+name+'/')
+    
     else:
-        pass
+        return render(request,'teachers_profile.html',)
        
-    return render(request,'teachers_profile.html',)
+    # return render(request,'teachers_profile.html',)
+
+
+
+
+def attendanceList_manual(requests,division,year,date,name):
+    
+     table = lecture_class.objects.all().filter(division = division,year = year,professor = name,date = date)
+    
+     name = requests.user.username
+   
+     return render(requests,'attendanceList_manual.html',{'table':table})
+
 
 
 
@@ -36,9 +51,7 @@ def lectures_list(request):
 
     name = request.user.username
     table = lecture_class.objects.all().filter(professor = name)
-    lecture_id = request.POST.get('lecture_id', None)
-    lecture_class.objects.all().filter(lecture_id = lecture_id).delete()
-    
+       
 
     return render(request,'lectures_list.html',{'table':table})
 
@@ -106,15 +119,9 @@ def attendanceListid(request,id):
 def lectures_list_status(requests):
 
     name = requests.user.username
+    
     table = lecture_class.objects.all().filter(professor = name)
-    if requests.method == "POST":
-     ids = requests.POST.get('id', None)
-     lecture_class.objects.all().filter(lecture_id = ids).update(status = "unpublished")
-     
-     
-    else:
-        return render(requests,'lectures_status.html',{'table':table})
-
+    
     return render(requests,'lectures_status.html',{'table':table})
 
 
@@ -138,14 +145,16 @@ def forms_lectures(requests,uuid):
     if requests.method == "POST":  
      f_name = requests.POST.get('f_name', None)
      l_name = requests.POST.get('l_name', None)
+     username = requests.POST.get('username', None)
+     user_id = requests.POST.get('user_id', None)
      attendance = requests.POST.get('attendance', None)
      division = requests.POST.get('division', None)
      year = requests.POST.get('year', None)
      subject = requests.POST.get('subject', None)
      lecture_id = requests.POST.get('lecture_id', None)
 
-     if attendance != None and f_name != None and l_name != None and division != None and subject != None and year != None:
-          s_attendance.objects.create(attendance =attendance,f_name = f_name,l_name = l_name, division = division,subject = subject,year = year,lecture_id=lecture_id)
+     if attendance != None and f_name != None and l_name != None and division != None and subject != None and year != None and username != None and user_id != None:
+          s_attendance.objects.create(attendance =attendance,f_name = f_name,l_name = l_name, division = division,subject = subject,year = year,lecture_id=lecture_id,user_id = user_id,username = username)
           print("name :" ,attendance,f_name,l_name,division,year)
      else:
           pass 
@@ -155,3 +164,31 @@ def forms_lectures(requests,uuid):
         
      
     return render(requests,'forms_lectures.html',{"all_lectures":all_lectures,"total":total})
+
+
+
+
+def unpublish_lecture(requests,ids):
+    
+     lecture_class.objects.all().filter(lecture_id = ids).update(status = "unpublished")
+    
+     name = requests.user.username
+
+     table = lecture_class.objects.all().filter(professor = name)
+    
+     return redirect('/lectures_list_status/',{'table':table})
+     
+     
+    
+
+def lectures_delete(requests,ids):
+    
+     lecture_class.objects.all().filter(lecture_id = ids).update(delete_status = "deleted")
+    
+     name = requests.user.username
+
+     table = lecture_class.objects.all().filter(professor = name)
+    
+     return redirect('/lectures_list/',{'table':table})      
+
+    

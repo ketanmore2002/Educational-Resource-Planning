@@ -19,14 +19,27 @@ from attendance.forms import attendanceForm
 
 
 
-def home(request):
-     return render(request,'index.html',)
+def home(requests):
+
+     return render(requests,'index.html',)
 
 
 
 
-def profile(request):
-     return render(request,'profile.html',)
+def profile(requests):
+
+     if requests.method == "POST":
+          name = requests.user.username
+          id = requests.user.id
+          table_al = s_attendance.objects.all()
+          table_all = table_al.count
+          table = s_attendance.objects.all().filter(username = name , user_id = id)
+          total = table.count()
+          return render(requests,'attendanceList_students.html',{"table":table,"total":total,"table_all":table_all})
+     else:
+          return render(requests,'profile.html',)
+     
+    
      
 
 
