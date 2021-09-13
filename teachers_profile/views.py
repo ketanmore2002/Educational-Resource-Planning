@@ -126,7 +126,7 @@ def lectures_list_status(requests):
 
 
 @login_required(login_url='/accounts/login/')
-@staff_member_required(login_url='/')
+
 def forms_lectures(requests,uuid):
 
     all_lectures = lecture_class.objects.all().filter(lecture_id=uuid)
