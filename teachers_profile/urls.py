@@ -18,6 +18,7 @@ urlpatterns = [
     path("forms_lectures/<str:uuid>/",views.forms_lectures,name='forms_lectures'),
     path("unpublish_lecture/<str:ids>/",views.unpublish_lecture,name='unpublish_lecture'),
     path("lectures_delete/<str:ids>/",views.lectures_delete,name='lectures_delete'),
+    path("redict_lecture/<str:url>/",views.redict_lecture,name='redict_lecture'),
      
    
 ]

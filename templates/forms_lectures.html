@@ -38,8 +38,11 @@
           <span class="ml-auto text-gray-900">{{lecture.time}}</span>
         </div>
         <div class="flex">
-          <span class="title-font font-medium text-2xl text-gray-900">Total Attendance : {{total}}</span>
-          <form method = "POST" action="{{lecture.link}}"  id="form1" enctype="multipart/form-data" name = "{{lecture.lecture_id}}">
+          <span class="title-font font-medium text-2xl text-gray-900">Total Attendance : {{total}} </span>
+
+          
+         
+          <form target= "_blank"  action="" id="form1" method = "POST" >
           {% csrf_token %}
          <input type="hidden" id="f_name" name="f_name" value="{{user.first_name}}">
          <input type="hidden" id="attendance" name="attendance" value="present">
@@ -50,9 +53,12 @@
          <input type="hidden" id="year" name="year" value="{{lecture.year}}">
          <input type="hidden" id="lecture_id" name="lecture_id" value="{{lecture.lecture_id}}">
          <input type="hidden" id="subject" name="subject" value="{{lecture.subject}}">
+         <input type="hidden" id="url" name="url" value="{{lecture.link}}">
          </form><br> 
+         
           <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" type="submit" form="form1" >JOIN NOW</button>
-         </button>
+          
+          
         </div>
       </div>
       <img alt="" class="lg:w-1/2" width="800" height="506" src="{% static '/attendance3.gif' %}">

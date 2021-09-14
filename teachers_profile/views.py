@@ -87,8 +87,9 @@ def create_lectures(request):
         date = request.POST.get('date', None)
         time = request.POST.get('time', None)
         status = request.POST.get('status', None)
+        delete_status = request.POST.get('delete_status', None)
         print("Namne",subject,division,professor,year,date,time,link)
-        lecture_class.objects.create(subject = subject,division = division,professor = professor,year = year,link = link,date = date,time = time,status = status)
+        lecture_class.objects.create(subject = subject,division = division,professor = professor,year = year,link = link,date = date,time = time,status = status,delete_status = delete_status)
     else:
         pass
 
@@ -152,10 +153,17 @@ def forms_lectures(requests,uuid):
      year = requests.POST.get('year', None)
      subject = requests.POST.get('subject', None)
      lecture_id = requests.POST.get('lecture_id', None)
+     url = requests.POST.get('url', None)
+
+     
 
      if attendance != None and f_name != None and l_name != None and division != None and subject != None and year != None and username != None and user_id != None:
           s_attendance.objects.create(attendance =attendance,f_name = f_name,l_name = l_name, division = division,subject = subject,year = year,lecture_id=lecture_id,user_id = user_id,username = username)
           print("name :" ,attendance,f_name,l_name,division,year)
+         
+          return redirect("https://"+ str(url))
+          
+          
      else:
           pass 
     
@@ -184,6 +192,8 @@ def unpublish_lecture(requests,ids):
 def lectures_delete(requests,ids):
     
      lecture_class.objects.all().filter(lecture_id = ids).update(delete_status = "deleted")
+
+     lecture_class.objects.all().filter(lecture_id = ids).update(status = "unpublished")
     
      name = requests.user.username
 
@@ -192,3 +202,7 @@ def lectures_delete(requests,ids):
      return redirect('/lectures_list/',{'table':table})      
 
     
+
+def redict_lecture(requests,url):
+
+    return redirect("//"+ url)
