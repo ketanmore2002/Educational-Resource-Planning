@@ -65,8 +65,9 @@ def teachers(request):
 @login_required(login_url='/accounts/login/')
 def lectures(request,div,year):
           
-     all_lectures = lecture_class.objects.all().filter(division=div,year=year)    
-     return render(request,'lectures.html',{'all_lectures':all_lectures})
+     all_lectures = lecture_class.objects.all().filter(division=div,year=year)
+     count =  all_lectures.count()   
+     return render(request,'lectures.html',{'all_lectures':all_lectures,'div':div,'year':year,'count':count})
 
 
 

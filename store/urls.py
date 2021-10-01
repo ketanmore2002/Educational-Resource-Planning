@@ -35,6 +35,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('',include('attendance.urls')),
     path('',include('teachers_profile.urls')),
+    path('',include('marks_app.urls')),
     
     
 ]

@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 
 
 @login_required(login_url='/accounts/login/')
-@staff_member_required(login_url='/')
+# @staff_member_required(login_url='/')
 def teachers_profile(request):
 
     name = request.user.username
@@ -46,7 +46,7 @@ def attendanceList_manual(requests,division,year,date,name):
 
 
 @login_required(login_url='/accounts/login/')
-@staff_member_required(login_url='/')
+# @staff_member_required(login_url='/')
 def lectures_list(request):
 
     name = request.user.username
@@ -72,10 +72,22 @@ def attendanceList(request,divi,ear,sub,date):
 
 
 
+def attendanceList_userid(request,id,div,year):
+
+    # print("Namne 2",divi,ear,sub)
+    
+    table = s_attendance.objects.all().filter(user_id = id,division = div, year = year)
+
+    total = table.count()
+
+    return render(request,'attendanceList.html',{"table":table,"total":total})
+
+
+
 
 
 @login_required(login_url='/accounts/login/')
-@staff_member_required(login_url='/')
+# @staff_member_required(login_url='/')
 def create_lectures(request):
 
     if request.method == 'POST':
@@ -99,7 +111,7 @@ def create_lectures(request):
 
 
 @login_required(login_url='/accounts/login/')
-@staff_member_required(login_url='/')
+# @staff_member_required(login_url='/')
 def attendanceListid(request,id):
 
     # print("Namne 2",divi,ear,sub)
@@ -116,7 +128,7 @@ def attendanceListid(request,id):
 
 
 @login_required(login_url='/accounts/login/')
-@staff_member_required(login_url='/')
+# @staff_member_required(login_url='/')
 def lectures_list_status(requests):
 
     name = requests.user.username
@@ -160,13 +172,17 @@ def forms_lectures(requests,uuid):
      if attendance != None and f_name != None and l_name != None and division != None and subject != None and year != None and username != None and user_id != None:
           s_attendance.objects.create(attendance =attendance,f_name = f_name,l_name = l_name, division = division,subject = subject,year = year,lecture_id=lecture_id,user_id = user_id,username = username)
           print("name :" ,attendance,f_name,l_name,division,year)
+
+          if "https://" in url:
+              url1 = url.replace("https://","")
+              return redirect("https://"+ str(url1))
+          elif "http://" in url:
+              url2 = url.replace("http://","")
+              return redirect("http://"+ str(url2))
+          else:
+              return redirect("http://"+ str(url))
          
-          return redirect("https://"+ str(url))
-          
-          
-     else:
-          pass 
-    
+        
     else:
         return render(requests,'forms_lectures.html',{"all_lectures":all_lectures,"total":total})
         

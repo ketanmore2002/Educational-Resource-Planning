@@ -13,7 +13,8 @@
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"> Welcome {{user.username}}, Today's Lectures</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base"> You will see yours Lectures Below! </p>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base"> total lectures conducted in division : {{div}} year : {{year}} are {{count}} </p>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base"><a href = "/attendanceList_userid/{{user.id}}/{{div}}/{{year}}"> CHECK Your attendance in division : {{div}} year : {{year}}  </a> </p>
     </div>    
      
      {% for lecture in all_lectures %}

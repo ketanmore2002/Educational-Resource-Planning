@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'ordersapp',
     'attendance',
+    'marks_app',
     'teachers_profile',
     'allauth',
     'allauth.account',
