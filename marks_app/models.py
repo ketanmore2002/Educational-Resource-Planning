@@ -75,7 +75,7 @@ class first_year_student (models.Model):
    graphics = models.CharField(max_length=20000,null=True)
    bce = models.CharField(max_length=20000,null=True)
    eee = models.CharField(max_length=20000,null=True)
-   student_code = models.UUIDField(default = uuid.uuid4, editable = False,null=True)
+   student_code = models.UUIDField(default = uuid.uuid4, editable = False,null=True,unique=True)
    exam = models.CharField(max_length=20000,null=True)
    marks = models.IntegerField(null=True)
 
