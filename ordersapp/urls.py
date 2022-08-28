@@ -14,7 +14,7 @@ urlpatterns = [
     path("teachers/",views.teachers,name='teachers'),
     path("chat/",views.chat,name='chat'),
     path("assignments/",views.assignments,name='assignments'),
-    path("loaderio-679c1633b7bf325f491eb089807bcfd2/",views.index,name='loaderio-679c1633b7bf325f491eb089807bcfd2'),
+#     path("loaderio-679c1633b7bf325f491eb089807bcfd2/",views.home,name='loaderio-679c1633b7bf325f491eb089807bcfd2'),
     
        
       
