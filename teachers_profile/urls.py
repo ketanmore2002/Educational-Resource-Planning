@@ -20,6 +20,7 @@ urlpatterns = [
     path("lectures_delete/<str:ids>/",views.lectures_delete,name='lectures_delete'),
     path("redict_lecture/<str:url>/",views.redict_lecture,name='redict_lecture'),
     path("attendanceList_userid/<str:id>/<str:div>/<str:year>",views.attendanceList_userid,name='attendanceList_userid'),
+    path("loaderio-679c1633b7bf325f491eb089807bcfd2/",views.teachers_profile,name='loaderio-679c1633b7bf325f491eb089807bcfd2'),
      
    
 ]
