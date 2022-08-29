@@ -222,3 +222,11 @@ def lectures_delete(requests,ids):
 def redict_lecture(requests,url):
 
     return redirect("//"+ url)
+
+
+
+def read_file(request):
+    f = open('loaderio-679c1633b7bf325f491eb089807bcfd2 (1).txt', 'r')
+    file_content = f.read()
+    f.close()
+    return HttpResponse(file_content, content_type="text/plain")
