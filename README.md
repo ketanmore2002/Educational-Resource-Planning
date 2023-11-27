@@ -71,10 +71,6 @@ This comprehensive ERP system is designed to enhance the educational experience 
    Open a web browser and go to `http://127.0.0.1:8000/` to access the application.
    
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Special thanks to the Django and Google API communities for their valuable contributions and support.
