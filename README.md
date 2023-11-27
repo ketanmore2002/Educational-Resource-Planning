@@ -45,7 +45,7 @@ This comprehensive ERP system is designed to enhance the educational experience 
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/yourusername/educational-erp.git
-   cd educational-erp
+   cd ncer.herokuapp.com-master
    ```
 
 2. **Install Dependencies:**
