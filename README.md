@@ -1,59 +1,96 @@
-<h2 align="left">Hi 👋! My name is Ketan and I'm a fullstack developer, from India</h2>
+# Educational ERP System with Online Lecture Creation and Attendance Management
 
-###
+## Project Overview
 
-<img align="right" height="150" src=" https://camo.githubusercontent.com/61491d59e71fec5c794945fed916a4a682b6c0404fc31f30b08a0d919c558404/68747470733a2f2f696d616765732e73717561726573706163652d63646e2e636f6d2f636f6e74656e742f76312f3537363966633430316236333162616231616464623261622f313534313538303631313632342d5445363451474b524a4738535741495553374e532f6b6531375a77644742546f6464493870446d34386b506f73776c7a6a53564d4d2d53784f703743563539425a772d7a505067646e346a557756634a45315a7657515578776b6d794578676c4e714770304976544a5a616d574c49327a76595748384b332d735f3479737a63703272795449304871544f6161556f68724938504936465879386339505774426c7141566c555335697a7064634958445a71445976707252715a32395077306f2f636f64696e672d667265616b2e676966"  />
+This comprehensive ERP system is designed to enhance the educational experience by providing a platform for teachers to create and conduct online lectures. The system leverages Django for its robust framework and incorporates Google Authentication for secure access.
 
-###
+### Features
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="30" alt="django logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="30" alt="postgresql logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg" height="30" alt="heroku logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="30" alt="bootstrap logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="30" alt="github logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" alt="git logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" height="30" alt="google logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" height="30" alt="jquery logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="30" alt="linkedin logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="30" alt="numpy logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" height="30" alt="redis logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="30" alt="sass logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="30" alt="vscode logo"  />
-</div>
+1. **Online Lecture Creation:**
+   - Teachers can create and schedule online lectures, specifying date, time, and topic.
+   - Upload and share lecture materials, including presentations, documents, and multimedia content.
 
-###
+2. **Student Participation:**
+   - Students can join scheduled lectures through the platform.
+   - Real-time communication features such as chat or Q&A for student-teacher interaction.
 
-<div align="left">
-  <a href="https://www.instagram.com/ketanmore_/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
-  </a>
-  <a href="mailto:moreketan2002.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
-  </a>
-  <a href="https://www.linkedin.com/in/ketan-more-4247881ab/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
-  </a>
-</div>
+3. **Attendance Tracking:**
+   - Automated attendance tracking during online lectures.
+   - Ability for teachers to manually mark attendance and make adjustments as needed.
 
-###
+4. **Google Authentication:**
+   - Secure user authentication using Google accounts for both teachers and students.
+   - Simplifies the registration and login process, ensuring the privacy and security of user data.
+
+5. **User Profiles:**
+   - Personalized profiles for teachers and students with essential information.
+   - Display of lecture history, attendance records, and other relevant details.
+
+6. **Dashboard and Analytics:**
+   - Comprehensive dashboards for teachers to view attendance trends, lecture analytics, and student engagement metrics.
+
+7. **Responsive Design:**
+   - Mobile-friendly interface for access on various devices, providing flexibility for both teachers and students.
+
+## Installation and Setup
+
+### Prerequisites
+
+- Python 3.x installed
+- Django framework installed (`pip install Django`)
+- Google API credentials for authentication
+
+### Steps
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/educational-erp.git
+   cd educational-erp
+   ```
+
+2. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure Google Authentication:**
+   - Obtain Google API credentials and configure them in the settings.
+   - Update `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in the settings.
+
+4. **Database Setup:**
+   ```bash
+   python manage.py migrate
+   ```
+
+5. **Run the Development Server:**
+   ```bash
+   python manage.py runserver
+   ```
+
+6. **Access the Application:**
+   Open a web browser and go to `http://127.0.0.1:8000/` to access the application.
+   
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Special thanks to the Django and Google API communities for their valuable contributions and support.
+
+## Images
+
+<img width="1467" alt="Screenshot 2023-11-27 at 11 03 34 AM" src="https://github.com/ketanmore2002/ncer.herokuapp.com/assets/88627103/22444499-d796-447a-aa77-6d42380f8b4f">
+
+<img width="1467" alt="Screenshot 2023-11-27 at 11 04 02 AM" src="https://github.com/ketanmore2002/ncer.herokuapp.com/assets/88627103/d2f46d24-1cdf-49fe-86d2-fa6682b8863f">
+
+<img width="1467" alt="Screenshot 2023-11-27 at 11 04 25 AM" src="https://github.com/ketanmore2002/ncer.herokuapp.com/assets/88627103/08e70d85-cf0a-4d74-87e3-cd3b44350b31">
+
+<img width="1467" alt="Screenshot 2023-11-27 at 11 04 50 AM" src="https://github.com/ketanmore2002/ncer.herokuapp.com/assets/88627103/e513fd3f-27d0-4d3c-b526-ccd1d4f3a5b8">
+
+<img width="1467" alt="Screenshot 2023-11-27 at 11 05 24 AM" src="https://github.com/ketanmore2002/ncer.herokuapp.com/assets/88627103/cc3ca86d-0cf9-4b21-b87c-1138e47519fa">
+
+<img width="1467" alt="Screenshot 2023-11-27 at 11 06 51 AM" src="https://github.com/ketanmore2002/ncer.herokuapp.com/assets/88627103/85ffb509-3649-47f9-9a52-9024eb09b7a1">
+
+
