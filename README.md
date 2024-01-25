@@ -44,7 +44,7 @@ This comprehensive ERP system is designed to enhance the educational experience 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/educational-erp.git
+   git clone https://github.com/ketanmore2002/Educational-Resource-Planning.git
    cd ncer.herokuapp.com-master
    ```
 
